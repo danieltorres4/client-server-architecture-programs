@@ -1,7 +1,7 @@
 /*        CLIENT-SERVER ARCHITECTURE TEST     */
 /*          SANCHEZ TORRES SERGIO DANIEL      */
 /*                NOVEMBER 3rd 2022           */
-/*             program 04: for-exec.c         */
+/*             program 01: for-exec.c         */
 
 //Adding the required libraries 
 #include <stdio.h>

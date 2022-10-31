@@ -1,7 +1,7 @@
 /*        CLIENT-SERVER ARCHITECTURE TEST     */
 /*          SANCHEZ TORRES SERGIO DANIEL      */
 /*                NOVEMBER 3rd 2022           */
-/*                program 05: wait.c          */
+/*                program 02: wait.c          */
 
 //Adding the required libraries 
 #include <stdio.h>
