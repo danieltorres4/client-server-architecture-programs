@@ -31,7 +31,7 @@ int main()
   printf( "Despues de wait\n" );
 
   //Using printf() to show the hexadecimal value of the pointer
-  printf( "El valor &arg_wait=%X\n",&arg_wait );
+  printf( "El valor &arg_wait=%p\n",&arg_wait );
 
   //Using printf() to show the arg_wait int value
   printf( "La variable arg_wait=%d\n",arg_wait );

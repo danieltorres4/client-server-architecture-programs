@@ -56,7 +56,7 @@ int main()
       printf( "Proceso padre, despues de wait\n" );
 
       //Using printf() to show the hexadecimal value of the pointer
-      printf( "Proceso padre, el valor &arg_wait=%X\n",&arg_wait );
+      printf( "Proceso padre, el valor &arg_wait=%p\n",&arg_wait );
 
       //Using printf() to show the int value of arg_wait
       printf( "Proceso padre, la variable arg_wait=%d\n",arg_wait );
