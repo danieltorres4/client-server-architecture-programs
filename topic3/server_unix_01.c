@@ -15,15 +15,15 @@ int main()
  // la funcion socket devuelve un int que es el file descriptor
  printf("socket (AF_UNIX, SOCK_STREAM, 0)\n");
  //socket(socket_family, socket_type, )
- socket_fd = socket (AF_UNIX, SOCK_STREAM, 0);
+ socket_fd = socket (AF_UNIX, SOCK_STREAM, 0); //file descriptor
 
  printf("socket_fd=%d\n",socket_fd);
 
  // una variable de tipo struct sockaddr_un
  // que sera nuestra estructura server socket
- struct sockaddr_un servidor;
+ struct sockaddr_un servidor; 
 
- // un apuntador a la variable anterior
+ // un apuntador a la variable anterior (estructura)
  struct sockaddr* pservidor = (struct sockaddr*)&servidor;
 
  // este int almacenara el size de la estructura
@@ -37,11 +37,11 @@ int main()
  // inicializamos el atributo sun_family de la struct
  servidor.sun_family = AF_UNIX;
 
- // inicializamos el atributo sun_path con el nombre del archivo
+ // inicializamos el atributo sun_path con el nombre del archivo, copia de derecha a izquierda
  strcpy( servidor.sun_path, socket_name );
 
  printf("bind(socket_fd,pservidor,size_servidor)\n");
- bind(socket_fd,pservidor,size_servidor);
+ bind(socket_fd,pservidor,size_servidor); //(fd, apuntador, longitud de estrucutra)
 
  printf("Hasta aqui llegan las funciones, vamos a dormir el proceso 10 seg.\n");
 
@@ -50,9 +50,9 @@ int main()
 
  printf("Antes de terminar el proceso hay que cerrar el descriptor y desligar el socker del archivo\n");
 
- printf("close(socket_fd)\n");
+ printf("close(socket_fd)\n"); //cerrado socket
  close( socket_fd );
- printf("unlink( socket_name )\n");
+ printf("unlink( socket_name )\n"); //desligando
  unlink( socket_name );
  return 0;
 }
