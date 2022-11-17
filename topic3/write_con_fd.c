@@ -15,7 +15,7 @@ int main(int argc, char const *argv[])
   char buff[] = "Prueba para escribir este texto a archivo, con file descriptor\nMi nombre es: SANCHEZ TORRES SERGIO DANIEL\nMateria ACS";
   
   //Using an 'if' statement to verify if open() function can create a file and open the file
-  if( (fd = open("archivo_con_fd.txt",  O_RDWR | O_CREAT) ) == -1 )
+  if( (fd = open("archivo_con_fd.txt",  O_RDWR | O_CREAT, S_IRUSR | S_IWUSR | S_IRGRP | S_IROTH) ) == -1 )
   {
     //the file could not be opened, the open() function has returned -1
     printf("fallo apertura de archivo\n");
@@ -38,6 +38,7 @@ int main(int argc, char const *argv[])
     {
       //printing the bytes that were written in the file
       printf("escribi %d bytes al archivo\n", bytes_escritos);
+      close(fd);
     }
   }
   return 0;
